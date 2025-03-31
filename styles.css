@@ -1,4 +1,6 @@
-/* Reset and basic styling */
+/* -------------------------
+   BASIC RESET & BODY STYLES
+------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -7,103 +9,156 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  color: #fff;
+  background-color: #000; /* Dark background */
+  line-height: 1.5;
 }
 
-/* Header and Navigation */
-header {
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 20px;
-}
-
-nav {
+/* -------------------------
+   NAVIGATION BAR
+------------------------- */
+.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #000; /* Match background */
+  position: sticky;
+  top: 0;
 }
 
-nav .logo {
-  font-size: 1.5em;
+.nav-logo {
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-nav ul {
+.nav-links {
   list-style: none;
   display: flex;
 }
 
-nav ul li {
-  margin: 0 10px;
+.nav-links li {
+  margin-left: 1.5rem;
 }
 
-nav ul li a {
+.nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
+  transition: color 0.3s;
 }
 
-/* Hero Section */
+.nav-links a:hover {
+  color: #f4a261; /* Accent color on hover */
+}
+
+/* -------------------------
+   HERO SECTION
+------------------------- */
 .hero {
-  background: url('hero-image.jpg') center/cover no-repeat;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: #fff;
-  position: relative;
+  padding: 2rem;
+  overflow: hidden; /* Ensures background text/images don't overflow */
 }
 
-.hero::before {
-  content: "";
+/* Large repeated background text */
+.background-text {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* dark overlay */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.07); 
+  text-align: center;
+  white-space: nowrap; /* Keep text in one line */
+  pointer-events: none; /* Let clicks pass through */
 }
 
-.hero-text {
+/* Foreground content: headline & button */
+.hero-content {
+  max-width: 600px;
+  z-index: 2; /* Above the background text */
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #f4a261; /* Accent color */
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #e69750;
+}
+
+/* -------------------------
+   HERO IMAGES
+------------------------- */
+.hero-images {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 2;
+}
+
+.person-img {
+  width: 150px; /* Adjust as needed */
+  margin-left: 1rem;
+}
+
+.person1 {
   position: relative;
-  text-align: center;
-  z-index: 1;
+  top: 0;
+  z-index: 3;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+.person2 {
+  position: relative;
+  top: -50px; /* Adjust to overlap or position differently */
+  z-index: 4;
 }
 
-/* Section Headings */
-h2 {
-  margin-bottom: 20px;
+.swirl-img {
+  position: absolute;
+  width: 200px;
+  top: -20px;
+  right: -30px; 
+  z-index: 2; /* Behind the second person */
+  opacity: 0.9;
 }
 
-/* Portfolio Grid */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+/* -------------------------
+   PLACEHOLDER SECTIONS
+------------------------- */
+.placeholder-section {
+  padding: 4rem 2rem;
+  background-color: #111; 
+  border-top: 1px solid #222;
 }
 
-.portfolio-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
+.placeholder-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-}
-
-/* Footer */
+/* -------------------------
+   FOOTER
+------------------------- */
 footer {
-  background: #333;
-  color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 1rem;
+  background-color: #000;
+  border-top: 1px solid #222;
 }
